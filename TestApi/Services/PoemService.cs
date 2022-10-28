@@ -2,12 +2,12 @@ using AutoMapper;
 using Base.Shared;
 using Base.Shared.Dtos;
 using Base.Shared.Services;
-using TestWebApi.Datas;
-using TestWebApi.Dtos.PoemDtos;
-using TestWebApi.IServices;
-using TestWebApi.Models;
+using TestApi.Datas;
+using TestApi.Dtos.PoemDtos;
+using TestApi.IServices;
+using TestApi.Models;
 
-namespace TestWebApi.Services
+namespace TestApi.Services
 {
     public class PoemService : CrudService<Poem, Int32, 
         PoemDto, PoemUpdateDto, PoemCreateDto>,
@@ -21,7 +21,7 @@ namespace TestWebApi.Services
         public override async Task<ApiResult> CanInsertAsync(PoemCreateDto dto)
         {
             return await Task.FromResult(ApiResult.Ok());          
-        } 
+        }
 
         public override async Task<ApiResult> CanUpdateAsync(PoemUpdateDto dto)
         {

@@ -31,6 +31,16 @@ namespace T4CodeGenerator.T4Tools
             {
                 var generatorCsfile = Path.Combine(controllerPath, $"{type.Name}Controller.cs");
                 var generator = new ApiControllerGenerator(type);
+                if (File.Exists(generatorCsfile))
+                {
+                    if (Tool.AcceptUpdate)
+                    {
+
+                        File.WriteAllText(generatorCsfile, generator.TransformText());
+
+                    }
+                    continue;
+                }
                 File.WriteAllText(generatorCsfile, generator.TransformText());
             }
 

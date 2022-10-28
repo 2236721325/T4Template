@@ -1,21 +1,18 @@
-
-using Base.Shared.Domains;
-using Microsoft.EntityFrameworkCore;
 using Autofac.Extensions.DependencyInjection;
 using Autofac;
-using T4CodeGenerator.T4Tools;
-using TestWebApi.ObjectMaps;
-using TestWebApi.Datas;
-using TestWebApi.IServices;
-using TestWebApi.Services;
+using Base.Shared.Domains;
+using Microsoft.EntityFrameworkCore;
+using TestApi.ObjectMaps;
+using TestApi.Datas;
 
-namespace TestWebApi
+namespace TestApi
 {
     public class Program
     {
         public static void Main(string[] args)
         {
-            //WebApiGenerator.GenerateSingelProjectWebApi(typeof(BaseEntity<>));
+
+            T4CodeGenerator.T4Tools.WebApiGenerator.GenerateSingelProjectWebApi(typeof(BaseEntity<>));
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
@@ -24,18 +21,17 @@ namespace TestWebApi
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
             builder.Services.AddAutoMapper(typeof(CustomProfile));
             builder.Services.AddDbContextPool<MyDbContext>(options =>
             {
                 options.UseSqlite("Filename=Test.db");
             });
-            builder.Services.AddTransient<IPoemService, PoemService>();
-            builder.Services.AddTransient<IUserService, UserService>();
 
             builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
             builder.Host.ConfigureContainer<ContainerBuilder>(builder =>
             {
-                builder.RegisterModule<TestWebApiModule>();
+                builder.RegisterModule<TestModule>();
             });
 
             var app = builder.Build();

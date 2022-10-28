@@ -28,6 +28,16 @@ namespace T4CodeGenerator.T4Tools
             {
                 var generatorCsfile = Path.Combine(servicePath, $"I{type.Name}Service.cs");
                 var generator = new IServiceGenerator(type);
+                if (File.Exists(generatorCsfile))
+                {
+                    if (Tool.AcceptUpdate)
+                    {
+
+                        File.WriteAllText(generatorCsfile, generator.TransformText());
+
+                    }
+                    continue;
+                }
                 File.WriteAllText(generatorCsfile, generator.TransformText());
             }
            
@@ -53,6 +63,16 @@ namespace T4CodeGenerator.T4Tools
             {
                 var generatorCsfile = Path.Combine(servicePath, $"{type.Name}Service.cs");
                 var generator = new ServiceGenerator(type);
+                if (File.Exists(generatorCsfile))
+                {
+                    if (Tool.AcceptUpdate)
+                    {
+
+                        File.WriteAllText(generatorCsfile, generator.TransformText());
+
+                    }
+                    continue;
+                }
                 File.WriteAllText(generatorCsfile, generator.TransformText());
             }
 

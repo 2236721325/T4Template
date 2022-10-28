@@ -14,6 +14,7 @@ namespace T4CodeGenerator.Utilities
     }
     public class Tool
     {
+        public static bool AcceptUpdate = false;
         public static ProjectTypeEnum? ProjectType { get; set; }
         //不同类型的 项目获取的地址不同 这个是获取控制台项目的项目文件夹。
         public static string GetProjectPath()
@@ -30,7 +31,6 @@ namespace T4CodeGenerator.Utilities
                 default:
                     throw new ArgumentException();
             }
-
           
         }
         //获取所有的程序集（有缺陷）

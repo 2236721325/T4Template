@@ -46,7 +46,12 @@ namespace Base.Shared.Services
             if (e == null) return ApiResult.OhNo <TEnityDto> ("Id不存在！");
             return ApiResult.Ok(_Mapper.Map<TEnity, TEnityDto>(e));
         }
-
+        /// <summary>
+        /// 这样会sql注入 感觉不会！传入的也是属性的 名称 与数据库无关
+        ///
+        /// </summary>
+        /// <param name="getPaged"></param>
+        /// <returns></returns>
         public async virtual Task<ApiResult<PagedListDto<TEnityDto>>> GetPagedListAsync(PagedSearchDto getPaged)
         {
             var query = _Enitity.AsQueryable();

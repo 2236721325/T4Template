@@ -27,6 +27,16 @@ namespace T4CodeGenerator.T4Tools
             }
             var generatorCsfile = Path.Combine(datasPath, $"MyDbContext.cs");
             var generator = new EFDbContextGenerator(types);
+            if (File.Exists(generatorCsfile))
+            {
+                if (Tool.AcceptUpdate)
+                {
+
+                    File.WriteAllText(generatorCsfile, generator.TransformText());
+
+                }
+                return;
+            }
             File.WriteAllText(generatorCsfile, generator.TransformText());
 
         }
