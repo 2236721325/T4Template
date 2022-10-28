@@ -4,3 +4,4 @@
 调用
 WebApiGenerator.GenerateWebApi(typeof(BaseEntity<>));
 生成的示例项目为 TestWebApi
+只需要写一Models 就可以生成webapi接口
