@@ -4,7 +4,6 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using T4CodeGenerator.T4Templates;
-using T4CodeGenerator.T4Templates.Services;
 using T4CodeGenerator.Utilities;
 
 namespace T4CodeGenerator.T4Tools

@@ -6,7 +6,7 @@ namespace TestApi.Dtos.UserDtos
     {
         public String Name { get; set; }
         public String Account { get; set; }
-        public String PassHash { get; set; }
+        public String Password { get; set; }
         public Int32 Id { get; set; }
     }
 }

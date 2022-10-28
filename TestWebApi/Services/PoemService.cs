@@ -21,7 +21,7 @@ namespace TestWebApi.Services
         public override async Task<ApiResult> CanInsertAsync(PoemCreateDto dto)
         {
             return await Task.FromResult(ApiResult.Ok());          
-        } 
+        }
 
         public override async Task<ApiResult> CanUpdateAsync(PoemUpdateDto dto)
         {

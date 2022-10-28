@@ -8,4 +8,6 @@ namespace TestApi.Models
         public string Account { get; set; }
         public string PassHash { get; set; }
     }
+
+   
 }
