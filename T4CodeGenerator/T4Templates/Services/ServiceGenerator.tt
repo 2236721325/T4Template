@@ -1,0 +1,36 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+using AutoMapper;
+using Base.Shared;
+using Base.Shared.Dtos;
+using Base.Shared.Services;
+using <#=_assemblyName#>.Datas;
+using <#=_assemblyName#>.Dtos.<#=_type.Name#>Dtos;
+using <#=_assemblyName#>.IServices;
+using <#=_assemblyName#>.Models;
+
+namespace <#=_assemblyName#>.Services
+{
+    public class <#=_type.Name#>Service : CrudService<<#=_type.Name#>, <#=_idproperty.PropertyType.Name#>, 
+        <#=_type.Name#>Dto, <#=_type.Name#>UpdateDto, <#=_type.Name#>CreateDto>,
+        I<#=_type.Name#>Service,
+        ITransientDependency
+    {
+        public <#=_type.Name#>Service(MyDbContext dbContext, IMapper mapper) : base(dbContext, mapper)
+        {
+        }
+
+        public override async Task<ApiResult> CanInsertAsync(<#=_type.Name#>CreateDto dto)
+        {
+            return await Task.FromResult(ApiResult.Ok());          
+        }
+
+        public override async Task<ApiResult> CanUpdateAsync(<#=_type.Name#>UpdateDto dto)
+        {
+            return await Task.FromResult(ApiResult.Ok());          
+        }
+    }
+}

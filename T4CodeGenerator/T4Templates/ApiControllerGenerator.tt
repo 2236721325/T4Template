@@ -1,0 +1,61 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".txt" #>
+using Base.Shared.Dtos;
+using Base.Shared.IControllers;
+using Microsoft.AspNetCore.Mvc;
+using <#=_assemblyName#>.Dtos.<#=_type.Name#>Dtos;
+using <#=_assemblyName#>.IServices;
+using <#=_assemblyName#>.Services;
+
+namespace <#=_assemblyName#>.Controllers
+{
+    [ApiController]
+    [Route("api/[controller]/[action]")]
+    public class <#=_type.Name#>Controller : ControllerBase,
+        ICrudController<<#=_idproperty.PropertyType.Name#>,<#=_type.Name#>Dto,<#=_type.Name#>UpdateDto,
+            <#=_type.Name#>CreateDto>
+    {
+        private readonly I<#=_type.Name#>Service _I<#=_type.Name#>Service;
+
+        public <#=_type.Name#>Controller(I<#=_type.Name#>Service i<#=_type.Name#>Service)
+        {
+            _I<#=_type.Name#>Service = i<#=_type.Name#>Service;
+        }
+
+      
+
+        [HttpGet("{id}")]
+        public async Task<ApiResult<<#=_type.Name#>Dto>> Get(<#=_idproperty.PropertyType.Name#> id)
+        {
+            return await _I<#=_type.Name#>Service.GetAsync(id);
+        }
+
+        [HttpPost]
+        public async Task<ApiResult<PagedListDto<<#=_type.Name#>Dto>>> GetPagedList(PagedSearchDto search)
+        {
+            return await _I<#=_type.Name#>Service.GetPagedListAsync(search);
+        }
+
+        [HttpPost]
+        public async Task<ApiResult> Insert(<#=_type.Name#>CreateDto dto)
+        {
+            return await _I<#=_type.Name#>Service.InsertAsync(dto);
+        }
+
+        [HttpPut]
+        public async Task<ApiResult> Update(<#=_type.Name#>UpdateDto dto)
+        {
+            return await _I<#=_type.Name#>Service.UpdateAsync(dto);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ApiResult> Delete(<#=_idproperty.PropertyType.Name#> id)
+        {
+            return await _I<#=_type.Name#>Service.DeleteAsync(id);
+        }
+    }
+}

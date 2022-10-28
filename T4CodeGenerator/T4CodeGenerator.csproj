@@ -1,0 +1,112 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="T4Templates\ApiControllerGenerator.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ApiControllerGenerator.tt</DependentUpon>
+    </None>
+    <None Include="T4Templates\Dtos\BaseDtoGenerator.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>BaseDtoGenerator.tt</DependentUpon>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.CodeDom" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="T4Templates\ApiControllerGenerator.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ApiControllerGenerator.cs</LastGenOutput>
+    </None>
+    <None Update="T4Templates\DbContexts\EFDbContextGenerator.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>EFDbContextGenerator.cs</LastGenOutput>
+    </None>
+    <None Update="T4Templates\Dtos\CreateDtoGenerator.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>CreateDtoGenerator.cs</LastGenOutput>
+    </None>
+    <None Update="T4Templates\Dtos\BaseDtoGenerator.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>BaseDtoGenerator.cs</LastGenOutput>
+    </None>
+    <None Update="T4Templates\Dtos\UpdateDtoGenerator.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>UpdateDtoGenerator.cs</LastGenOutput>
+    </None>
+    <None Update="T4Templates\ObjectMaps\AutoMapProfileGenerator.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>AutoMapProfileGenerator.cs</LastGenOutput>
+    </None>
+    <None Update="T4Templates\Services\IServiceGenerator.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>IServiceGenerator.cs</LastGenOutput>
+    </None>
+    <None Update="T4Templates\Services\ServiceGenerator.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ServiceGenerator.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="T4Templates\ApiControllerGenerator.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ApiControllerGenerator.tt</DependentUpon>
+    </Compile>
+    <Compile Update="T4Templates\DbContexts\EFDbContextGenerator.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EFDbContextGenerator.tt</DependentUpon>
+    </Compile>
+    <Compile Update="T4Templates\Dtos\BaseDtoGenerator.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>BaseDtoGenerator.tt</DependentUpon>
+    </Compile>
+    <Compile Update="T4Templates\Dtos\CreateDtoGenerator.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>CreateDtoGenerator.tt</DependentUpon>
+    </Compile>
+    <Compile Update="T4Templates\DtoGenerator.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DtoGenerator.tt</DependentUpon>
+    </Compile>
+    <Compile Update="T4Templates\Dtos\UpdateDtoGenerator.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>UpdateDtoGenerator.tt</DependentUpon>
+    </Compile>
+    <Compile Update="T4Templates\ObjectMaps\AutoMapProfileGenerator.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AutoMapProfileGenerator.tt</DependentUpon>
+    </Compile>
+    <Compile Update="T4Templates\Services\IServiceGenerator.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>IServiceGenerator.tt</DependentUpon>
+    </Compile>
+    <Compile Update="T4Templates\Services\ServiceGenerator.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ServiceGenerator.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+</Project>

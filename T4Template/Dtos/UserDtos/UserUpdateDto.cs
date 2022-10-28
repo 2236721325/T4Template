@@ -1,0 +1,11 @@
+using System;
+
+namespace T4Template.Dtos.UserDtos
+{
+    public class UserUpdateDto
+    {
+        public String Account { get; set; }
+        public String Name { get; set; }
+        public Guid Id { get; set; }
+    }
+}

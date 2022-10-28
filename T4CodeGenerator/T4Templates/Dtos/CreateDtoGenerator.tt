@@ -1,0 +1,21 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+using System;
+
+namespace <#=_assemblyName#>.Dtos.<#=_type.Name#>Dtos
+{
+    public class <#=_type.Name#>CreateDto
+    {
+<#
+foreach(var p in _propertyInfos)
+{
+#>
+        public <#=p.PropertyType.Name#> <#=p.Name#> { get; set; }
+<#
+}
+#>
+    }
+}
