@@ -11,9 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestWebApi", "TestWebApi\Te
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestApi", "TestApi\TestApi.csproj", "{924CFEDA-4368-4554-99FC-562D4A9716C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpClientDemo", "HttpClientDemo\HttpClientDemo.csproj", "{D139E7E9-7D30-4CDD-A663-A6C9A9CC2DF6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HttpClientDemo", "HttpClientDemo\HttpClientDemo.csproj", "{D139E7E9-7D30-4CDD-A663-A6C9A9CC2DF6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testststs", "Testststs\Testststs.csproj", "{22E9EF10-9708-4EF9-A03D-0EE7E0010607}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Testststs", "Testststs\Testststs.csproj", "{22E9EF10-9708-4EF9-A03D-0EE7E0010607}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MyTests", "MyTests", "{18541B34-6C6E-435B-B4FF-F96A04A69D75}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
