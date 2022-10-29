@@ -1,11 +1,11 @@
 using System;
 
-namespace TestApi.Dtos.UserDtos
+namespace Testststs.Dtos.UserDtos
 {
-    public class UserCreateDto
+    public class UserDto
     {
         public String Name { get; set; }
         public String Account { get; set; }
-        public String Password { get; set; }
+        public Int64 Id { get; set; }
     }
 }

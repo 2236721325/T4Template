@@ -1,10 +1,10 @@
 using AutoMapper;
-using TestApi.Models;
-using TestApi.Dtos.PoemDtos;
-using TestApi.Dtos.UserDtos;
+using Testststs.Models;
+using Testststs.Dtos.PoemDtos;
+using Testststs.Dtos.UserDtos;
 using Base.Shared.Commons;
 
-namespace TestApi.ObjectMaps
+namespace Testststs.ObjectMaps
 {
     public class CustomProfile:Profile
     {

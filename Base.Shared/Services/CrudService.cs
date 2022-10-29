@@ -36,7 +36,7 @@ namespace Base.Shared.Services
             if (e == null) return ApiResult.OhNo("Id不存在！");
             _Enitity.Remove(e);
             await _DbContext.SaveChangesAsync();
-            return ApiResult.Ok();
+            return ApiResult.Ok("删除成功");
 
         }
 
@@ -103,7 +103,7 @@ namespace Base.Shared.Services
             var entity = _Mapper.Map<TUpdateDto, TEnity>(dto);
             _Enitity.Update(entity);
             await _DbContext.SaveChangesAsync();
-            return ApiResult.Ok();
+            return ApiResult.Ok("修改成功！");
         }
 
 

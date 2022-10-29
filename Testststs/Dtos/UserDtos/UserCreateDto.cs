@@ -1,6 +1,6 @@
 using System;
 
-namespace TestApi.Dtos.UserDtos
+namespace Testststs.Dtos.UserDtos
 {
     public class UserCreateDto
     {

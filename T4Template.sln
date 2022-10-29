@@ -9,7 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Base.Shared", "Base.Shared\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestWebApi", "TestWebApi\TestWebApi.csproj", "{76968595-554D-4838-A249-868E0A01F74B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApi", "TestApi\TestApi.csproj", "{924CFEDA-4368-4554-99FC-562D4A9716C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestApi", "TestApi\TestApi.csproj", "{924CFEDA-4368-4554-99FC-562D4A9716C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpClientDemo", "HttpClientDemo\HttpClientDemo.csproj", "{D139E7E9-7D30-4CDD-A663-A6C9A9CC2DF6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testststs", "Testststs\Testststs.csproj", "{22E9EF10-9708-4EF9-A03D-0EE7E0010607}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,14 @@ Global
 		{924CFEDA-4368-4554-99FC-562D4A9716C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{924CFEDA-4368-4554-99FC-562D4A9716C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{924CFEDA-4368-4554-99FC-562D4A9716C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D139E7E9-7D30-4CDD-A663-A6C9A9CC2DF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D139E7E9-7D30-4CDD-A663-A6C9A9CC2DF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D139E7E9-7D30-4CDD-A663-A6C9A9CC2DF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D139E7E9-7D30-4CDD-A663-A6C9A9CC2DF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22E9EF10-9708-4EF9-A03D-0EE7E0010607}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22E9EF10-9708-4EF9-A03D-0EE7E0010607}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22E9EF10-9708-4EF9-A03D-0EE7E0010607}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22E9EF10-9708-4EF9-A03D-0EE7E0010607}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

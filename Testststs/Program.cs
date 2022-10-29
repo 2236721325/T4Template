@@ -1,21 +1,24 @@
-
+using Autofac;
+using Autofac.Extensions.DependencyInjection;
 using Base.Shared.Domains;
 using Microsoft.EntityFrameworkCore;
-using Autofac.Extensions.DependencyInjection;
-using Autofac;
-using T4CodeGenerator.T4Tools;
-using TestWebApi.Datas;
-using TestWebApi.ObjectMaps;
+using Testststs.Datas;
+using Testststs.ObjectMaps;
 
-namespace TestWebApi
+namespace Testststs
 {
     public class Program
     {
         public static void Main(string[] args)
         {
-            WebApiGenerator.GenerateSingelProjectWebApi(typeof(BaseEntity<>));
+            //T4CodeGenerator.T4Tools.WebApiGenerator.GenerateSingelProjectWebApi(typeof(BaseEntity<>));
             var builder = WebApplication.CreateBuilder(args);
 
+            builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
+            builder.Host.ConfigureContainer<ContainerBuilder>(builder =>
+            {
+                builder.RegisterModule<TestModule>();
+            });
             // Add services to the container.
 
             builder.Services.AddControllers();
@@ -28,11 +31,6 @@ namespace TestWebApi
                 options.UseSqlite("Filename=Test.db");
             });
 
-            builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
-            builder.Host.ConfigureContainer<ContainerBuilder>(builder =>
-            {
-                builder.RegisterModule<TestWebApiModule>();
-            });
 
             var app = builder.Build();
 
