@@ -57,7 +57,7 @@ namespace Base.Shared.Services
             var query = _Enitity.AsQueryable();
             if (getPaged.Searchs!=null)
             {
-                var filter = new FilterBuilder();
+                var filter = new FilterBuilder(); 
                 //var filter = new StringBuilder();
                 foreach (var search in getPaged.Searchs)
                 {
