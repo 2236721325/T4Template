@@ -1,6 +1,6 @@
 ﻿using System.Security.Principal;
 
-namespace Base.Shared.Dtos
+namespace WebApi.BaseShared.Dtos
 {
     public class BaseEntityDto<TKey>
     {

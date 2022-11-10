@@ -1,5 +1,5 @@
-using Base.Shared.IServices;
-using TestApid.Dtos.ToDoItemDtos;
+using WebApi.BaseShared.IServices;
+using TestApid.Dtos;
 
 namespace TestApid.IServices
 {

@@ -18,7 +18,7 @@ namespace T4CodeGenerator.T4Templates.ObjectMaps
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "D:\Coding\Learning\T4Template\T4CodeGenerator\T4Templates\ObjectMaps\AutoMapProfileGenerator.tt"
+    #line 1 "D:\Coding\提高效率的类库项目\T4Template\T4CodeGenerator\T4Templates\ObjectMaps\AutoMapProfileGenerator.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "17.0.0.0")]
     public partial class AutoMapProfileGenerator : AutoMapProfileGeneratorBase
     {
@@ -30,47 +30,21 @@ namespace T4CodeGenerator.T4Templates.ObjectMaps
         {
             this.Write("using AutoMapper;\r\nusing ");
             
-            #line 7 "D:\Coding\Learning\T4Template\T4CodeGenerator\T4Templates\ObjectMaps\AutoMapProfileGenerator.tt"
+            #line 7 "D:\Coding\提高效率的类库项目\T4Template\T4CodeGenerator\T4Templates\ObjectMaps\AutoMapProfileGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_assemblyName));
             
             #line default
             #line hidden
-            this.Write(".Models;\r\n");
+            this.Write(".Models;\r\nusing ");
             
-            #line 8 "D:\Coding\Learning\T4Template\T4CodeGenerator\T4Templates\ObjectMaps\AutoMapProfileGenerator.tt"
-
-foreach(var type in _modelTypes)
-{
-
-            
-            #line default
-            #line hidden
-            this.Write("using ");
-            
-            #line 12 "D:\Coding\Learning\T4Template\T4CodeGenerator\T4Templates\ObjectMaps\AutoMapProfileGenerator.tt"
+            #line 8 "D:\Coding\提高效率的类库项目\T4Template\T4CodeGenerator\T4Templates\ObjectMaps\AutoMapProfileGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_assemblyName));
             
             #line default
             #line hidden
-            this.Write(".Dtos.");
+            this.Write(".Dtos;\r\n\r\n\r\n\r\nnamespace ");
             
-            #line 12 "D:\Coding\Learning\T4Template\T4CodeGenerator\T4Templates\ObjectMaps\AutoMapProfileGenerator.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(type.Name));
-            
-            #line default
-            #line hidden
-            this.Write("Dtos;\r\n");
-            
-            #line 13 "D:\Coding\Learning\T4Template\T4CodeGenerator\T4Templates\ObjectMaps\AutoMapProfileGenerator.tt"
-
-}
-
-            
-            #line default
-            #line hidden
-            this.Write("\r\nnamespace ");
-            
-            #line 17 "D:\Coding\Learning\T4Template\T4CodeGenerator\T4Templates\ObjectMaps\AutoMapProfileGenerator.tt"
+            #line 12 "D:\Coding\提高效率的类库项目\T4Template\T4CodeGenerator\T4Templates\ObjectMaps\AutoMapProfileGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_assemblyName));
             
             #line default
@@ -78,7 +52,7 @@ foreach(var type in _modelTypes)
             this.Write(".ObjectMaps\r\n{\r\n    public class CustomProfile:Profile\r\n    {\r\n        public Cus" +
                     "tomProfile()\r\n        {\r\n");
             
-            #line 23 "D:\Coding\Learning\T4Template\T4CodeGenerator\T4Templates\ObjectMaps\AutoMapProfileGenerator.tt"
+            #line 18 "D:\Coding\提高效率的类库项目\T4Template\T4CodeGenerator\T4Templates\ObjectMaps\AutoMapProfileGenerator.tt"
 
 foreach(var type in _modelTypes)
 {
@@ -88,49 +62,49 @@ foreach(var type in _modelTypes)
             #line hidden
             this.Write("            CreateMap<");
             
-            #line 27 "D:\Coding\Learning\T4Template\T4CodeGenerator\T4Templates\ObjectMaps\AutoMapProfileGenerator.tt"
+            #line 22 "D:\Coding\提高效率的类库项目\T4Template\T4CodeGenerator\T4Templates\ObjectMaps\AutoMapProfileGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(type.Name));
             
             #line default
             #line hidden
             this.Write(", ");
             
-            #line 27 "D:\Coding\Learning\T4Template\T4CodeGenerator\T4Templates\ObjectMaps\AutoMapProfileGenerator.tt"
+            #line 22 "D:\Coding\提高效率的类库项目\T4Template\T4CodeGenerator\T4Templates\ObjectMaps\AutoMapProfileGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(type.Name));
             
             #line default
             #line hidden
             this.Write("Dto>();\r\n            CreateMap<");
             
-            #line 28 "D:\Coding\Learning\T4Template\T4CodeGenerator\T4Templates\ObjectMaps\AutoMapProfileGenerator.tt"
+            #line 23 "D:\Coding\提高效率的类库项目\T4Template\T4CodeGenerator\T4Templates\ObjectMaps\AutoMapProfileGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(type.Name));
             
             #line default
             #line hidden
             this.Write("CreateDto, ");
             
-            #line 28 "D:\Coding\Learning\T4Template\T4CodeGenerator\T4Templates\ObjectMaps\AutoMapProfileGenerator.tt"
+            #line 23 "D:\Coding\提高效率的类库项目\T4Template\T4CodeGenerator\T4Templates\ObjectMaps\AutoMapProfileGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(type.Name));
             
             #line default
             #line hidden
             this.Write(">();\r\n            CreateMap<");
             
-            #line 29 "D:\Coding\Learning\T4Template\T4CodeGenerator\T4Templates\ObjectMaps\AutoMapProfileGenerator.tt"
+            #line 24 "D:\Coding\提高效率的类库项目\T4Template\T4CodeGenerator\T4Templates\ObjectMaps\AutoMapProfileGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(type.Name));
             
             #line default
             #line hidden
             this.Write("UpdateDto, ");
             
-            #line 29 "D:\Coding\Learning\T4Template\T4CodeGenerator\T4Templates\ObjectMaps\AutoMapProfileGenerator.tt"
+            #line 24 "D:\Coding\提高效率的类库项目\T4Template\T4CodeGenerator\T4Templates\ObjectMaps\AutoMapProfileGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(type.Name));
             
             #line default
             #line hidden
             this.Write(">();\r\n");
             
-            #line 30 "D:\Coding\Learning\T4Template\T4CodeGenerator\T4Templates\ObjectMaps\AutoMapProfileGenerator.tt"
+            #line 25 "D:\Coding\提高效率的类库项目\T4Template\T4CodeGenerator\T4Templates\ObjectMaps\AutoMapProfileGenerator.tt"
 
 }
 

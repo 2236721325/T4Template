@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Text.Json;
 
-namespace Base.Shared.Dtos
+namespace WebApi.BaseShared.Dtos
 {
     public class PagedSearchDto
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Base.Shared.Commons
+namespace WebApi.BaseShared.Commons
 {
     public class FilterBuilder
     {
@@ -17,7 +17,7 @@ namespace Base.Shared.Commons
         }
         public void And(string filter)
         {
-            if(_isFirstAppend)
+            if (_isFirstAppend)
             {
                 _isFirstAppend = false;
             }

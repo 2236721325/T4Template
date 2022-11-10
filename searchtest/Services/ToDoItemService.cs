@@ -1,16 +1,14 @@
 using AutoMapper;
+using searchtest.Dtos;
+using searchtest.IServices;
+using searchtest.Models;
 using WebApi.BaseShared;
 using WebApi.BaseShared.Dtos;
 using WebApi.FreeSqlShared.Services;
-using WebApi.FreeSqlShared.Domains;
 
-using TestApid.Dtos;
-using TestApid.IServices;
-using TestApid.Models;
-
-namespace TestApid.Services
+namespace searchtest.Services
 {
-    public class ToDoItemService : CrudService<ToDoItem, Int32, 
+    public class ToDoItemService : CrudService<ToDoItem, Guid, 
         ToDoItemDto, ToDoItemUpdateDto, ToDoItemCreateDto>,
         IToDoItemService,
         ITransientDependency

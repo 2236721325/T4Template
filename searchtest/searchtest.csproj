@@ -7,11 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="FreeSql.Provider.Sqlite" Version="3.2.682" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Base.Shared\Base.Shared.csproj" />
+    <ProjectReference Include="..\T4CodeGenerator\T4CodeGenerator.csproj" />
+    <ProjectReference Include="..\WebApi.FreeSqlShared\WebApi.FreeSqlShared.csproj" />
   </ItemGroup>
 
 </Project>

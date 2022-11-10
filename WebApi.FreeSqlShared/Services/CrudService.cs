@@ -1,12 +1,12 @@
 ﻿using AutoMapper;
-using Base.Shared.Commons;
-using Base.Shared.Domains;
-using Base.Shared.Dtos;
-using Base.Shared.IServices;
 using System.Linq.Dynamic.Core;
 using System.Linq.Expressions;
 using System.Text;
 using System.Text.Json;
+using WebApi.BaseShared.Commons;
+using WebApi.BaseShared.Dtos;
+using WebApi.BaseShared.IServices;
+using WebApi.FreeSqlShared.Domains;
 
 namespace WebApi.FreeSqlShared.Services
 {
@@ -32,10 +32,11 @@ namespace WebApi.FreeSqlShared.Services
 
         public async virtual Task<ApiResult> DeleteAsync(TKey id)
         {
-            var e = await _FreeSql.Select<TEnity>(id).ToOneAsync();
-            if (e == null) return ApiResult.OhNo("Id不存在！");
-            await _FreeSql.Delete<TEnity>(id).ExecuteAffrowsAsync();
-            return ApiResult.Ok("删除成功");
+
+            var row=await _FreeSql.Delete<TEnity>(id).ExecuteAffrowsAsync();
+            if (row > 0) return ApiResult.Ok("删除成功");
+            else return ApiResult.OhNo("Id不存在！");
+
 
         }
 
@@ -53,7 +54,7 @@ namespace WebApi.FreeSqlShared.Services
         /// <returns></returns>
         public async virtual Task<ApiResult<PagedListDto<TEnityDto>>> GetPagedListAsync(PagedSearchDto getPaged)
         {
-            var query = _Enitity.AsQueryable();
+            var query = _FreeSql.Select<TEnity>();
             if (getPaged.Searchs != null)
             {
                 var filter = new FilterBuilder();
@@ -72,11 +73,10 @@ namespace WebApi.FreeSqlShared.Services
                             return ApiResult.OhNo<PagedListDto<TEnityDto>>("参数错误:Search错误！");
                     }
                 }
-                query = _Enitity.Where(filter.Build());
-
+                query = query.Where(filter.Build());
 
             }
-            var count = await query.LongCountAsync();
+            var count = await query.CountAsync();
 
             var enities = await query.OrderBy(e => e.Id).Skip(getPaged.SkipCount).Take(getPaged.TakeCount).ToListAsync();
             var dtos = _Mapper.Map<List<TEnity>, List<TEnityDto>>(enities);
@@ -99,10 +99,12 @@ namespace WebApi.FreeSqlShared.Services
             var r = await CanUpdateAsync(dto);
             if (r.Status == false) return r;
             var entity = _Mapper.Map<TUpdateDto, TEnity>(dto);
-            await _FreeSql.Update<TEnity>()
+            var row=await _FreeSql.Update<TEnity>()
                 .SetSource(entity)
                 .ExecuteAffrowsAsync();
-            return ApiResult.Ok("修改成功！");
+            if (row > 0) return ApiResult.Ok("修改成功！");
+            else return ApiResult.OhNo("Id不存在！");
+                    
         }
 
 

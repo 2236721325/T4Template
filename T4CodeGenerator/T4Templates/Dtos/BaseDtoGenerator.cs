@@ -12,13 +12,14 @@ namespace T4CodeGenerator.T4Templates.Dtos
     using System.Linq;
     using System.Text;
     using System.Collections.Generic;
+    using T4CodeGenerator.Extensions;
     using System;
     
     /// <summary>
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "D:\Coding\Learning\T4Template\T4CodeGenerator\T4Templates\Dtos\BaseDtoGenerator.tt"
+    #line 1 "D:\Coding\提高效率的类库项目\T4Template\T4CodeGenerator\T4Templates\Dtos\BaseDtoGenerator.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "17.0.0.0")]
     public partial class BaseDtoGenerator : BaseDtoGeneratorBase
     {
@@ -30,28 +31,21 @@ namespace T4CodeGenerator.T4Templates.Dtos
         {
             this.Write("using System;\r\n\r\nnamespace ");
             
-            #line 8 "D:\Coding\Learning\T4Template\T4CodeGenerator\T4Templates\Dtos\BaseDtoGenerator.tt"
+            #line 10 "D:\Coding\提高效率的类库项目\T4Template\T4CodeGenerator\T4Templates\Dtos\BaseDtoGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_assemblyName));
             
             #line default
             #line hidden
-            this.Write(".Dtos.");
+            this.Write(".Dtos\r\n{\r\n    public class ");
             
-            #line 8 "D:\Coding\Learning\T4Template\T4CodeGenerator\T4Templates\Dtos\BaseDtoGenerator.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(_type.Name));
-            
-            #line default
-            #line hidden
-            this.Write("Dtos\r\n{\r\n    public class ");
-            
-            #line 10 "D:\Coding\Learning\T4Template\T4CodeGenerator\T4Templates\Dtos\BaseDtoGenerator.tt"
+            #line 12 "D:\Coding\提高效率的类库项目\T4Template\T4CodeGenerator\T4Templates\Dtos\BaseDtoGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_type.Name));
             
             #line default
             #line hidden
             this.Write("Dto\r\n    {\r\n");
             
-            #line 12 "D:\Coding\Learning\T4Template\T4CodeGenerator\T4Templates\Dtos\BaseDtoGenerator.tt"
+            #line 14 "D:\Coding\提高效率的类库项目\T4Template\T4CodeGenerator\T4Templates\Dtos\BaseDtoGenerator.tt"
 
 foreach(var p in _propertyInfos)
 {
@@ -61,28 +55,108 @@ foreach(var p in _propertyInfos)
             #line hidden
             this.Write("        public ");
             
-            #line 16 "D:\Coding\Learning\T4Template\T4CodeGenerator\T4Templates\Dtos\BaseDtoGenerator.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(p.PropertyType.Name));
+            #line 18 "D:\Coding\提高效率的类库项目\T4Template\T4CodeGenerator\T4Templates\Dtos\BaseDtoGenerator.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(p.PropertyType.ToCodeString()));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 16 "D:\Coding\Learning\T4Template\T4CodeGenerator\T4Templates\Dtos\BaseDtoGenerator.tt"
+            #line 18 "D:\Coding\提高效率的类库项目\T4Template\T4CodeGenerator\T4Templates\Dtos\BaseDtoGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(p.Name));
             
             #line default
             #line hidden
             this.Write(" { get; set; }\r\n");
             
-            #line 17 "D:\Coding\Learning\T4Template\T4CodeGenerator\T4Templates\Dtos\BaseDtoGenerator.tt"
+            #line 19 "D:\Coding\提高效率的类库项目\T4Template\T4CodeGenerator\T4Templates\Dtos\BaseDtoGenerator.tt"
 
 }
 
             
             #line default
             #line hidden
-            this.Write("    }\r\n}");
+            this.Write("    }\r\n\r\n    public class ");
+            
+            #line 24 "D:\Coding\提高效率的类库项目\T4Template\T4CodeGenerator\T4Templates\Dtos\BaseDtoGenerator.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(_type.Name));
+            
+            #line default
+            #line hidden
+            this.Write("CreateDto\r\n    {\r\n");
+            
+            #line 26 "D:\Coding\提高效率的类库项目\T4Template\T4CodeGenerator\T4Templates\Dtos\BaseDtoGenerator.tt"
+
+foreach(var p in _propertyInfos.ToCreateDtoPropertyInfos())
+{
+
+            
+            #line default
+            #line hidden
+            this.Write("        public ");
+            
+            #line 30 "D:\Coding\提高效率的类库项目\T4Template\T4CodeGenerator\T4Templates\Dtos\BaseDtoGenerator.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(p.PropertyType.ToCodeString()));
+            
+            #line default
+            #line hidden
+            this.Write(" ");
+            
+            #line 30 "D:\Coding\提高效率的类库项目\T4Template\T4CodeGenerator\T4Templates\Dtos\BaseDtoGenerator.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(p.Name));
+            
+            #line default
+            #line hidden
+            this.Write(" { get; set; }\r\n");
+            
+            #line 31 "D:\Coding\提高效率的类库项目\T4Template\T4CodeGenerator\T4Templates\Dtos\BaseDtoGenerator.tt"
+
+}
+
+            
+            #line default
+            #line hidden
+            this.Write("    }\r\n\r\n    public class ");
+            
+            #line 36 "D:\Coding\提高效率的类库项目\T4Template\T4CodeGenerator\T4Templates\Dtos\BaseDtoGenerator.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(_type.Name));
+            
+            #line default
+            #line hidden
+            this.Write("UpdateDto\r\n    {\r\n");
+            
+            #line 38 "D:\Coding\提高效率的类库项目\T4Template\T4CodeGenerator\T4Templates\Dtos\BaseDtoGenerator.tt"
+
+foreach(var p in _propertyInfos)
+{
+
+            
+            #line default
+            #line hidden
+            this.Write("        public ");
+            
+            #line 42 "D:\Coding\提高效率的类库项目\T4Template\T4CodeGenerator\T4Templates\Dtos\BaseDtoGenerator.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(p.PropertyType.ToCodeString()));
+            
+            #line default
+            #line hidden
+            this.Write(" ");
+            
+            #line 42 "D:\Coding\提高效率的类库项目\T4Template\T4CodeGenerator\T4Templates\Dtos\BaseDtoGenerator.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(p.Name));
+            
+            #line default
+            #line hidden
+            this.Write(" { get; set; }\r\n");
+            
+            #line 43 "D:\Coding\提高效率的类库项目\T4Template\T4CodeGenerator\T4Templates\Dtos\BaseDtoGenerator.tt"
+
+}
+
+            
+            #line default
+            #line hidden
+            this.Write("    }\r\n\r\n}");
             return this.GenerationEnvironment.ToString();
         }
     }

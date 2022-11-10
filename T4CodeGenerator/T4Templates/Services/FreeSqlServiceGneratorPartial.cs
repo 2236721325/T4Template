@@ -4,20 +4,19 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 
-namespace T4CodeGenerator.T4Templates.Dtos
+namespace T4CodeGenerator.T4Templates.Services
 {
-
-    public partial class CreateDtoGenerator
+    public partial class FreeSqlServiceGenerator
     {
         private readonly Type _type;
-        private readonly List<PropertyInfo> _propertyInfos;
+        private readonly PropertyInfo _idproperty;
         private readonly string _assemblyName;
 
-        public CreateDtoGenerator(Type type)
+        public FreeSqlServiceGenerator(Type type)
         {
             _type = type;
-            _propertyInfos = type.GetProperties()
-                .Where(p => p.Name != "Id").ToList();
+            _idproperty = _type.GetProperties()
+                .Where(t => t.Name == "Id").First();
             _assemblyName = Assembly.GetEntryAssembly().GetName().Name;
 
 

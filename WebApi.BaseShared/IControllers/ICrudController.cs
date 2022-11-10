@@ -1,11 +1,11 @@
-﻿using Base.Shared.Dtos;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WebApi.BaseShared.Dtos;
 
-namespace Base.Shared.IControllers
+namespace WebApi.BaseShared.IControllers
 {
     public interface ICrudController<TKey, TEnityDto, TUpdateDto, TCreateDto>
     {

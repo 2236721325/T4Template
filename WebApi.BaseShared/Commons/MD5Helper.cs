@@ -1,7 +1,7 @@
 ﻿using System.Security.Cryptography;
 using System.Text;
 
-namespace Base.Shared.Commons
+namespace WebApi.BaseShared.Commons
 {
     public static class MD5Helper
     {

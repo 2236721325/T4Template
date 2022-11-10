@@ -3,9 +3,11 @@
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="T4CodeGenerator.Extensions" #>
 using System;
 
-namespace <#=_assemblyName#>.Dtos.<#=_type.Name#>Dtos
+namespace <#=_assemblyName#>.Dtos
 {
     public class <#=_type.Name#>Dto
     {
@@ -13,9 +15,34 @@ namespace <#=_assemblyName#>.Dtos.<#=_type.Name#>Dtos
 foreach(var p in _propertyInfos)
 {
 #>
-        public <#=p.PropertyType.Name#> <#=p.Name#> { get; set; }
+        public <#=p.PropertyType.ToCodeString()#> <#=p.Name#> { get; set; }
 <#
 }
 #>
     }
+
+    public class <#=_type.Name#>CreateDto
+    {
+<#
+foreach(var p in _propertyInfos.ToCreateDtoPropertyInfos())
+{
+#>
+        public <#=p.PropertyType.ToCodeString()#> <#=p.Name#> { get; set; }
+<#
+}
+#>
+    }
+
+    public class <#=_type.Name#>UpdateDto
+    {
+<#
+foreach(var p in _propertyInfos)
+{
+#>
+        public <#=p.PropertyType.ToCodeString()#> <#=p.Name#> { get; set; }
+<#
+}
+#>
+    }
+
 }

@@ -1,12 +1,12 @@
 ﻿using AutoMapper;
-using Base.Shared.Commons;
-using Base.Shared.Dtos;
-using Base.Shared.IServices;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Dynamic.Core;
 using System.Linq.Expressions;
 using System.Text;
 using System.Text.Json;
+using WebApi.BaseShared.Commons;
+using WebApi.BaseShared.Dtos;
+using WebApi.BaseShared.IServices;
 using WebApi.EFShared.Domains;
 
 namespace WebApi.EFShared.Services

@@ -3,8 +3,8 @@
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
-using Base.Shared.IServices;
-using <#=_assemblyName#>.Dtos.<#=_type.Name#>Dtos;
+using WebApi.BaseShared.IServices;
+using <#=_assemblyName#>.Dtos;
 
 namespace <#=_assemblyName#>.IServices
 {

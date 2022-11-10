@@ -6,11 +6,9 @@
 using AutoMapper;
 using WebApi.BaseShared;
 using WebApi.BaseShared.Dtos;
-using WebApi.BaseShared.Services;
-using WebApi.EFShared.Services;
-using WebApi.EFShared.Domains;
+using WebApi.FreeSqlShared.Services;
+using WebApi.FreeSqlShared.Domains;
 
-using <#=_assemblyName#>.Datas;
 using <#=_assemblyName#>.Dtos;
 using <#=_assemblyName#>.IServices;
 using <#=_assemblyName#>.Models;
@@ -22,7 +20,7 @@ namespace <#=_assemblyName#>.Services
         I<#=_type.Name#>Service,
         ITransientDependency
     {
-        public <#=_type.Name#>Service(MyDbContext dbContext, IMapper mapper) : base(dbContext, mapper)
+        public <#=_type.Name#>Service(IMapper mapper, IFreeSql freeSql) : base(mapper, freeSql)
         {
         }
 

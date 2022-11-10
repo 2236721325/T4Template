@@ -4,10 +4,10 @@
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
 <#@ output extension=".txt" #>
-using Base.Shared.Dtos;
-using Base.Shared.IControllers;
+using WebApi.BaseShared.Dtos;
+using WebApi.BaseShared.IControllers;
 using Microsoft.AspNetCore.Mvc;
-using <#=_assemblyName#>.Dtos.<#=_type.Name#>Dtos;
+using <#=_assemblyName#>.Dtos;
 using <#=_assemblyName#>.IServices;
 using <#=_assemblyName#>.Services;
 

@@ -1,10 +1,10 @@
 using AutoMapper;
-using TestApid.Models;
-using TestApid.Dtos;
+using searchtest.Models;
+using searchtest.Dtos;
 
 
 
-namespace TestApid.ObjectMaps
+namespace searchtest.ObjectMaps
 {
     public class CustomProfile:Profile
     {

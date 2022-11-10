@@ -5,14 +5,9 @@
 <#@ import namespace="System.Collections.Generic" #>
 using AutoMapper;
 using <#=_assemblyName#>.Models;
-<#
-foreach(var type in _modelTypes)
-{
-#>
-using <#=_assemblyName#>.Dtos.<#=type.Name#>Dtos;
-<#
-}
-#>
+using <#=_assemblyName#>.Dtos;
+
+
 
 namespace <#=_assemblyName#>.ObjectMaps
 {

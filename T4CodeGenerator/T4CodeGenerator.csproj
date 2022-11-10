@@ -19,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Namotion.Reflection" Version="2.1.1" />
     <PackageReference Include="System.CodeDom" Version="6.0.0" />
   </ItemGroup>
 
@@ -31,17 +32,9 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>EFDbContextGenerator.cs</LastGenOutput>
     </None>
-    <None Update="T4Templates\Dtos\CreateDtoGenerator.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>CreateDtoGenerator.cs</LastGenOutput>
-    </None>
     <None Update="T4Templates\Dtos\BaseDtoGenerator.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>BaseDtoGenerator.cs</LastGenOutput>
-    </None>
-    <None Update="T4Templates\Dtos\UpdateDtoGenerator.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>UpdateDtoGenerator.cs</LastGenOutput>
     </None>
     <None Update="T4Templates\ObjectMaps\AutoMapProfileGenerator.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
@@ -50,6 +43,10 @@
     <None Update="T4Templates\Services\IServiceGenerator.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>IServiceGenerator.cs</LastGenOutput>
+    </None>
+    <None Update="T4Templates\Services\FreeSqlServiceGenerator.tt">
+      <LastGenOutput>FreeSqlServiceGenerator.cs</LastGenOutput>
+      <Generator>TextTemplatingFilePreprocessor</Generator>
     </None>
     <None Update="T4Templates\Services\ServiceGenerator.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
@@ -77,20 +74,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>BaseDtoGenerator.tt</DependentUpon>
     </Compile>
-    <Compile Update="T4Templates\Dtos\CreateDtoGenerator.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>CreateDtoGenerator.tt</DependentUpon>
-    </Compile>
     <Compile Update="T4Templates\DtoGenerator.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>DtoGenerator.tt</DependentUpon>
-    </Compile>
-    <Compile Update="T4Templates\Dtos\UpdateDtoGenerator.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>UpdateDtoGenerator.tt</DependentUpon>
     </Compile>
     <Compile Update="T4Templates\ObjectMaps\AutoMapProfileGenerator.cs">
       <DesignTime>True</DesignTime>
@@ -101,6 +88,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>IServiceGenerator.tt</DependentUpon>
+    </Compile>
+    <Compile Update="T4Templates\Services\FreeSqlServiceGenerator.cs">
+      <DependentUpon>FreeSqlServiceGenerator.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Update="T4Templates\Services\ServiceGenerator.cs">
       <DesignTime>True</DesignTime>

@@ -1,16 +1,16 @@
+using Microsoft.AspNetCore.Mvc;
+using searchtest.Dtos;
+using searchtest.IServices;
+using searchtest.Services;
 using WebApi.BaseShared.Dtos;
 using WebApi.BaseShared.IControllers;
-using Microsoft.AspNetCore.Mvc;
-using TestApid.Dtos;
-using TestApid.IServices;
-using TestApid.Services;
 
-namespace TestApid.Controllers
+namespace searchtest.Controllers
 {
     [ApiController]
     [Route("api/[controller]/[action]")]
     public class ToDoItemController : ControllerBase,
-        ICrudController<Int32,ToDoItemDto,ToDoItemUpdateDto,
+        ICrudController<Guid,ToDoItemDto,ToDoItemUpdateDto,
             ToDoItemCreateDto>
     {
         private readonly IToDoItemService _IToDoItemService;
@@ -23,7 +23,7 @@ namespace TestApid.Controllers
       
 
         [HttpGet("{id}")]
-        public async Task<ApiResult<ToDoItemDto>> Get(Int32 id)
+        public async Task<ApiResult<ToDoItemDto>> Get(Guid id)
         {
             return await _IToDoItemService.GetAsync(id);
         }
@@ -47,7 +47,7 @@ namespace TestApid.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<ApiResult> Delete(Int32 id)
+        public async Task<ApiResult> Delete(Guid id)
         {
             return await _IToDoItemService.DeleteAsync(id);
         }

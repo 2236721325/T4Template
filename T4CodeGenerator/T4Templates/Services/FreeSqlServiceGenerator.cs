@@ -7,7 +7,7 @@
 //     重新生成代码，这些更改将会丢失。
 // </auto-generated>
 // ------------------------------------------------------------------------------
-namespace T4CodeGenerator.T4Templates.Dtos
+namespace T4CodeGenerator.T4Templates.Services
 {
     using System.Linq;
     using System.Text;
@@ -18,9 +18,9 @@ namespace T4CodeGenerator.T4Templates.Dtos
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "D:\Coding\Learning\T4Template\T4CodeGenerator\T4Templates\Dtos\UpdateDtoGenerator.tt"
+    #line 1 "D:\Coding\提高效率的类库项目\T4Template\T4CodeGenerator\T4Templates\Services\FreeSqlServiceGenerator.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "17.0.0.0")]
-    public partial class UpdateDtoGenerator : UpdateDtoGeneratorBase
+    public partial class FreeSqlServiceGenerator : FreeSqlServiceGeneratorBase
     {
 #line hidden
         /// <summary>
@@ -28,61 +28,110 @@ namespace T4CodeGenerator.T4Templates.Dtos
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write("using System;\r\n\r\nnamespace ");
+            this.Write("using AutoMapper;\r\nusing WebApi.BaseShared;\r\nusing WebApi.BaseShared.Dtos;\r\nusing" +
+                    " WebApi.FreeSqlShared.Services;\r\nusing WebApi.FreeSqlShared.Domains;\r\n\r\nusing ");
             
-            #line 8 "D:\Coding\Learning\T4Template\T4CodeGenerator\T4Templates\Dtos\UpdateDtoGenerator.tt"
+            #line 12 "D:\Coding\提高效率的类库项目\T4Template\T4CodeGenerator\T4Templates\Services\FreeSqlServiceGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_assemblyName));
             
             #line default
             #line hidden
-            this.Write(".Dtos.");
+            this.Write(".Dtos;\r\nusing ");
             
-            #line 8 "D:\Coding\Learning\T4Template\T4CodeGenerator\T4Templates\Dtos\UpdateDtoGenerator.tt"
+            #line 13 "D:\Coding\提高效率的类库项目\T4Template\T4CodeGenerator\T4Templates\Services\FreeSqlServiceGenerator.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(_assemblyName));
+            
+            #line default
+            #line hidden
+            this.Write(".IServices;\r\nusing ");
+            
+            #line 14 "D:\Coding\提高效率的类库项目\T4Template\T4CodeGenerator\T4Templates\Services\FreeSqlServiceGenerator.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(_assemblyName));
+            
+            #line default
+            #line hidden
+            this.Write(".Models;\r\n\r\nnamespace ");
+            
+            #line 16 "D:\Coding\提高效率的类库项目\T4Template\T4CodeGenerator\T4Templates\Services\FreeSqlServiceGenerator.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(_assemblyName));
+            
+            #line default
+            #line hidden
+            this.Write(".Services\r\n{\r\n    public class ");
+            
+            #line 18 "D:\Coding\提高效率的类库项目\T4Template\T4CodeGenerator\T4Templates\Services\FreeSqlServiceGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_type.Name));
             
             #line default
             #line hidden
-            this.Write("Dtos\r\n{\r\n    public class ");
+            this.Write("Service : CrudService<");
             
-            #line 10 "D:\Coding\Learning\T4Template\T4CodeGenerator\T4Templates\Dtos\UpdateDtoGenerator.tt"
+            #line 18 "D:\Coding\提高效率的类库项目\T4Template\T4CodeGenerator\T4Templates\Services\FreeSqlServiceGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_type.Name));
             
             #line default
             #line hidden
-            this.Write("UpdateDto\r\n    {\r\n");
+            this.Write(", ");
             
-            #line 12 "D:\Coding\Learning\T4Template\T4CodeGenerator\T4Templates\Dtos\UpdateDtoGenerator.tt"
-
-foreach(var p in _propertyInfos)
-{
-
+            #line 18 "D:\Coding\提高效率的类库项目\T4Template\T4CodeGenerator\T4Templates\Services\FreeSqlServiceGenerator.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(_idproperty.PropertyType.Name));
             
             #line default
             #line hidden
-            this.Write("        public ");
+            this.Write(", \r\n        ");
             
-            #line 16 "D:\Coding\Learning\T4Template\T4CodeGenerator\T4Templates\Dtos\UpdateDtoGenerator.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(p.PropertyType.Name));
-            
-            #line default
-            #line hidden
-            this.Write(" ");
-            
-            #line 16 "D:\Coding\Learning\T4Template\T4CodeGenerator\T4Templates\Dtos\UpdateDtoGenerator.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(p.Name));
+            #line 19 "D:\Coding\提高效率的类库项目\T4Template\T4CodeGenerator\T4Templates\Services\FreeSqlServiceGenerator.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(_type.Name));
             
             #line default
             #line hidden
-            this.Write(" { get; set; }\r\n");
+            this.Write("Dto, ");
             
-            #line 17 "D:\Coding\Learning\T4Template\T4CodeGenerator\T4Templates\Dtos\UpdateDtoGenerator.tt"
-
-}
-
+            #line 19 "D:\Coding\提高效率的类库项目\T4Template\T4CodeGenerator\T4Templates\Services\FreeSqlServiceGenerator.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(_type.Name));
             
             #line default
             #line hidden
-            this.Write("    }\r\n}");
+            this.Write("UpdateDto, ");
+            
+            #line 19 "D:\Coding\提高效率的类库项目\T4Template\T4CodeGenerator\T4Templates\Services\FreeSqlServiceGenerator.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(_type.Name));
+            
+            #line default
+            #line hidden
+            this.Write("CreateDto>,\r\n        I");
+            
+            #line 20 "D:\Coding\提高效率的类库项目\T4Template\T4CodeGenerator\T4Templates\Services\FreeSqlServiceGenerator.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(_type.Name));
+            
+            #line default
+            #line hidden
+            this.Write("Service,\r\n        ITransientDependency\r\n    {\r\n        public ");
+            
+            #line 23 "D:\Coding\提高效率的类库项目\T4Template\T4CodeGenerator\T4Templates\Services\FreeSqlServiceGenerator.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(_type.Name));
+            
+            #line default
+            #line hidden
+            this.Write("Service(IMapper mapper, IFreeSql freeSql) : base(mapper, freeSql)\r\n        {\r\n   " +
+                    "     }\r\n\r\n        public override async Task<ApiResult> CanInsertAsync(");
+            
+            #line 27 "D:\Coding\提高效率的类库项目\T4Template\T4CodeGenerator\T4Templates\Services\FreeSqlServiceGenerator.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(_type.Name));
+            
+            #line default
+            #line hidden
+            this.Write("CreateDto dto)\r\n        {\r\n            return await Task.FromResult(ApiResult.Ok(" +
+                    "));          \r\n        }\r\n\r\n        public override async Task<ApiResult> CanUpd" +
+                    "ateAsync(");
+            
+            #line 32 "D:\Coding\提高效率的类库项目\T4Template\T4CodeGenerator\T4Templates\Services\FreeSqlServiceGenerator.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(_type.Name));
+            
+            #line default
+            #line hidden
+            this.Write("UpdateDto dto)\r\n        {\r\n            return await Task.FromResult(ApiResult.Ok(" +
+                    "));          \r\n        }\r\n    }\r\n}");
             return this.GenerationEnvironment.ToString();
         }
     }
@@ -94,7 +143,7 @@ foreach(var p in _propertyInfos)
     /// Base class for this transformation
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "17.0.0.0")]
-    public class UpdateDtoGeneratorBase
+    public class FreeSqlServiceGeneratorBase
     {
         #region Fields
         private global::System.Text.StringBuilder generationEnvironmentField;

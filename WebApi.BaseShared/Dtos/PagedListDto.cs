@@ -1,4 +1,4 @@
-﻿namespace Base.Shared.Dtos
+﻿namespace WebApi.BaseShared.Dtos
 {
     public class PagedListDto<TEntityDto>
     {

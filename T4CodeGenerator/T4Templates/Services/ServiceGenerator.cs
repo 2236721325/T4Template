@@ -18,7 +18,7 @@ namespace T4CodeGenerator.T4Templates.Services
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "D:\Coding\Learning\T4Template\T4CodeGenerator\T4Templates\Services\ServiceGenerator.tt"
+    #line 1 "D:\Coding\提高效率的类库项目\T4Template\T4CodeGenerator\T4Templates\Services\ServiceGenerator.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "17.0.0.0")]
     public partial class ServiceGenerator : ServiceGeneratorBase
     {
@@ -28,101 +28,95 @@ namespace T4CodeGenerator.T4Templates.Services
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write("using AutoMapper;\r\nusing Base.Shared;\r\nusing Base.Shared.Dtos;\r\nusing Base.Shared" +
-                    ".Services;\r\nusing ");
+            this.Write("using AutoMapper;\r\nusing WebApi.BaseShared;\r\nusing WebApi.BaseShared.Dtos;\r\nusing" +
+                    " WebApi.BaseShared.Services;\r\nusing WebApi.EFShared.Services;\r\nusing WebApi.EFSh" +
+                    "ared.Domains;\r\n\r\nusing ");
             
-            #line 10 "D:\Coding\Learning\T4Template\T4CodeGenerator\T4Templates\Services\ServiceGenerator.tt"
+            #line 13 "D:\Coding\提高效率的类库项目\T4Template\T4CodeGenerator\T4Templates\Services\ServiceGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_assemblyName));
             
             #line default
             #line hidden
             this.Write(".Datas;\r\nusing ");
             
-            #line 11 "D:\Coding\Learning\T4Template\T4CodeGenerator\T4Templates\Services\ServiceGenerator.tt"
+            #line 14 "D:\Coding\提高效率的类库项目\T4Template\T4CodeGenerator\T4Templates\Services\ServiceGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_assemblyName));
             
             #line default
             #line hidden
-            this.Write(".Dtos.");
+            this.Write(".Dtos;\r\nusing ");
             
-            #line 11 "D:\Coding\Learning\T4Template\T4CodeGenerator\T4Templates\Services\ServiceGenerator.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(_type.Name));
-            
-            #line default
-            #line hidden
-            this.Write("Dtos;\r\nusing ");
-            
-            #line 12 "D:\Coding\Learning\T4Template\T4CodeGenerator\T4Templates\Services\ServiceGenerator.tt"
+            #line 15 "D:\Coding\提高效率的类库项目\T4Template\T4CodeGenerator\T4Templates\Services\ServiceGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_assemblyName));
             
             #line default
             #line hidden
             this.Write(".IServices;\r\nusing ");
             
-            #line 13 "D:\Coding\Learning\T4Template\T4CodeGenerator\T4Templates\Services\ServiceGenerator.tt"
+            #line 16 "D:\Coding\提高效率的类库项目\T4Template\T4CodeGenerator\T4Templates\Services\ServiceGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_assemblyName));
             
             #line default
             #line hidden
             this.Write(".Models;\r\n\r\nnamespace ");
             
-            #line 15 "D:\Coding\Learning\T4Template\T4CodeGenerator\T4Templates\Services\ServiceGenerator.tt"
+            #line 18 "D:\Coding\提高效率的类库项目\T4Template\T4CodeGenerator\T4Templates\Services\ServiceGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_assemblyName));
             
             #line default
             #line hidden
             this.Write(".Services\r\n{\r\n    public class ");
             
-            #line 17 "D:\Coding\Learning\T4Template\T4CodeGenerator\T4Templates\Services\ServiceGenerator.tt"
+            #line 20 "D:\Coding\提高效率的类库项目\T4Template\T4CodeGenerator\T4Templates\Services\ServiceGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_type.Name));
             
             #line default
             #line hidden
             this.Write("Service : CrudService<");
             
-            #line 17 "D:\Coding\Learning\T4Template\T4CodeGenerator\T4Templates\Services\ServiceGenerator.tt"
+            #line 20 "D:\Coding\提高效率的类库项目\T4Template\T4CodeGenerator\T4Templates\Services\ServiceGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_type.Name));
             
             #line default
             #line hidden
             this.Write(", ");
             
-            #line 17 "D:\Coding\Learning\T4Template\T4CodeGenerator\T4Templates\Services\ServiceGenerator.tt"
+            #line 20 "D:\Coding\提高效率的类库项目\T4Template\T4CodeGenerator\T4Templates\Services\ServiceGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_idproperty.PropertyType.Name));
             
             #line default
             #line hidden
             this.Write(", \r\n        ");
             
-            #line 18 "D:\Coding\Learning\T4Template\T4CodeGenerator\T4Templates\Services\ServiceGenerator.tt"
+            #line 21 "D:\Coding\提高效率的类库项目\T4Template\T4CodeGenerator\T4Templates\Services\ServiceGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_type.Name));
             
             #line default
             #line hidden
             this.Write("Dto, ");
             
-            #line 18 "D:\Coding\Learning\T4Template\T4CodeGenerator\T4Templates\Services\ServiceGenerator.tt"
+            #line 21 "D:\Coding\提高效率的类库项目\T4Template\T4CodeGenerator\T4Templates\Services\ServiceGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_type.Name));
             
             #line default
             #line hidden
             this.Write("UpdateDto, ");
             
-            #line 18 "D:\Coding\Learning\T4Template\T4CodeGenerator\T4Templates\Services\ServiceGenerator.tt"
+            #line 21 "D:\Coding\提高效率的类库项目\T4Template\T4CodeGenerator\T4Templates\Services\ServiceGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_type.Name));
             
             #line default
             #line hidden
             this.Write("CreateDto>,\r\n        I");
             
-            #line 19 "D:\Coding\Learning\T4Template\T4CodeGenerator\T4Templates\Services\ServiceGenerator.tt"
+            #line 22 "D:\Coding\提高效率的类库项目\T4Template\T4CodeGenerator\T4Templates\Services\ServiceGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_type.Name));
             
             #line default
             #line hidden
             this.Write("Service,\r\n        ITransientDependency\r\n    {\r\n        public ");
             
-            #line 22 "D:\Coding\Learning\T4Template\T4CodeGenerator\T4Templates\Services\ServiceGenerator.tt"
+            #line 25 "D:\Coding\提高效率的类库项目\T4Template\T4CodeGenerator\T4Templates\Services\ServiceGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_type.Name));
             
             #line default
@@ -130,7 +124,7 @@ namespace T4CodeGenerator.T4Templates.Services
             this.Write("Service(MyDbContext dbContext, IMapper mapper) : base(dbContext, mapper)\r\n       " +
                     " {\r\n        }\r\n\r\n        public override async Task<ApiResult> CanInsertAsync(");
             
-            #line 26 "D:\Coding\Learning\T4Template\T4CodeGenerator\T4Templates\Services\ServiceGenerator.tt"
+            #line 29 "D:\Coding\提高效率的类库项目\T4Template\T4CodeGenerator\T4Templates\Services\ServiceGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_type.Name));
             
             #line default
@@ -139,7 +133,7 @@ namespace T4CodeGenerator.T4Templates.Services
                     "));          \r\n        }\r\n\r\n        public override async Task<ApiResult> CanUpd" +
                     "ateAsync(");
             
-            #line 31 "D:\Coding\Learning\T4Template\T4CodeGenerator\T4Templates\Services\ServiceGenerator.tt"
+            #line 34 "D:\Coding\提高效率的类库项目\T4Template\T4CodeGenerator\T4Templates\Services\ServiceGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_type.Name));
             
             #line default

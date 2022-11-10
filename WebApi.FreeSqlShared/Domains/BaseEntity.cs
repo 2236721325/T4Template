@@ -1,6 +1,6 @@
 ﻿using FreeSql.DataAnnotations;
 
-namespace Base.Shared.Domains
+namespace WebApi.FreeSqlShared.Domains
 {
     public class BaseEntity<TKey>
     {

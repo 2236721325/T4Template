@@ -1,13 +1,13 @@
-﻿using Base.Shared.Dtos;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WebApi.BaseShared.Dtos;
 
-namespace Base.Shared.IServices
+namespace WebApi.BaseShared.IServices
 {
-    public interface ICrudService<TKey,TEnityDto,TUpdateDto,TCreateDto>
+    public interface ICrudService<TKey, TEnityDto, TUpdateDto, TCreateDto>
     {
         Task<ApiResult<TEnityDto>> GetAsync(TKey id);
         Task<ApiResult<PagedListDto<TEnityDto>>> GetPagedListAsync(PagedSearchDto search);
